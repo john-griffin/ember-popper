@@ -90,6 +90,10 @@ export default class EmberPopperBase extends Component {
   @type(unionOf(null, 'string', Element))
   target = null
 
+  @argument
+  @type('boolean')
+  positionFixed = false
+
   // ================== PRIVATE PROPERTIES ==================
 
   /**
@@ -204,6 +208,7 @@ export default class EmberPopperBase extends Component {
     const renderInPlace = this.get('_renderInPlace');
     const eventsEnabled = this.get('eventsEnabled');
     const modifiers = this.get('modifiers');
+    const positionFixed = this.get('positionFixed');
     const placement = this.get('placement');
     const onCreate = this.get('onCreate');
     const onUpdate = this.get('onUpdate');
@@ -214,6 +219,7 @@ export default class EmberPopperBase extends Component {
       || eventsEnabled !== this._eventsEnabled
       || modifiers !== this._modifiers
       || placement !== this._placement
+      || positionFixed !== this._positionFixed
       || onCreate !== this._onCreate
       || onUpdate !== this._onUpdate;
 
@@ -230,12 +236,14 @@ export default class EmberPopperBase extends Component {
       this._eventsEnabled = eventsEnabled;
       this._modifiers = modifiers;
       this._placement = placement;
+      this._positionFixed = positionFixed;
       this._onCreate = onCreate;
       this._onUpdate = onUpdate;
 
       const options = {
         eventsEnabled,
         modifiers,
+        positionFixed,
         placement
       };
 
