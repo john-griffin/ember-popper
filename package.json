@@ -37,7 +37,7 @@
     "ember-legacy-class-transform": "^0.1.3",
     "ember-raf-scheduler": "^0.1.0",
     "fastboot-transform": "^0.1.0",
-    "popper.js": "1.13.0-next"
+    "popper.js": "1.13.0-next.1"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.6.0",
